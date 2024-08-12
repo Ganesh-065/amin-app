@@ -3,14 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { decrement, increment } from "./redux/counterSlice.ts";
 import { RootState } from "./redux/store.ts";
+import Blog from "./blog/Blog.tsx";
 
-const UserApp = React.lazy(() => import("userApp/App"));
-const ClientApp = React.lazy(() => import("client/App"));
+// const UserApp = React.lazy(() => import("userApp/App"));
+// const ClientApp = React.lazy(() => import("client/App"));
 
 const App = () => {
   const dispatch = useDispatch();
   const { value } = useSelector((store: RootState) => store.counter);
 
+  // lofin45614@alientex.com
   return (
     <div>
       <BrowserRouter>
@@ -32,7 +34,8 @@ const App = () => {
               </div>
             }
           />
-          <Route
+          <Route path="/blog" element={<Blog />} />
+          {/* <Route
             path="/user"
             element={
               <Suspense fallback={"loading..."}>
@@ -47,7 +50,7 @@ const App = () => {
                 <ClientApp />
               </Suspense>
             }
-          />
+          /> */}
         </Routes>
       </BrowserRouter>
     </div>

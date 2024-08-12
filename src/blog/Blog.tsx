@@ -13,7 +13,7 @@ import Main from "./Main";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 // import post1 from "./Blog1";
-// import post2 from "./blog-post.2.md";
+// import BlogPost2 from "./BlogPost2.md";
 // import post3 from "./blog-post.3.md";
 
 const sections = [
@@ -29,14 +29,44 @@ const sections = [
   { title: "Travel", url: "#" },
 ];
 
-const mainFeaturedPost = {
-  title: "Title of a longer featured blog post",
-  description:
-    "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
-  image: "https://picsum.photos/1100/350",
-  imageText: "main image description",
-  linkText: "Continue reading…",
-};
+const mainFeaturedPost = [
+  {
+    id: 0,
+    title: "Title of a longer featured blog post 0",
+    description:
+      "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
+    image: "https://picsum.photos/1100/355",
+    imageText: "main image description 0",
+    linkText: "Continue 0 reading…",
+  },
+  {
+    id: 1,
+    title: "Title of a longer featured blog post",
+    description:
+      "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
+    image: "https://picsum.photos/1100/353",
+    imageText: "main image description",
+    linkText: "Continue reading…",
+  },
+  {
+    id: 2,
+    title: "Title of a longer featured blog post 1",
+    description:
+      "Multiple lines of text that form the 1 lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
+    image: "https://picsum.photos/1100/351",
+    imageText: "main image description 1",
+    linkText: "Continue reading 1…",
+  },
+  {
+    id: 3,
+    title: "Title of a longer featured blog post 2",
+    description:
+      "Multiple lines of text that form the lede, 2 informing new readers quickly and efficiently about what's most interesting in this post's contents.",
+    image: "https://picsum.photos/1100/352",
+    imageText: "main image description 2",
+    linkText: "Continue reading 2…",
+  },
+];
 
 const featuredPosts = [
   {
@@ -57,7 +87,7 @@ const featuredPosts = [
   },
 ];
 
-const posts = ["post1", "post1", "post1"];
+const posts = ["post 1", "post 2", "post 3"];
 
 const sidebar = {
   title: "About",
@@ -109,8 +139,10 @@ export default function Blog() {
               social={sidebar.social}
             />
           </Grid>
+          {/* <pre>{BlogPost2}</pre> */}
         </main>
       </Container>
+      {/* <BlogPost2 /> */}
       <Footer
         title="Footer"
         description="Something here to give the footer a purpose!"

@@ -10,6 +10,7 @@ module.exports = {
         static: path.join(__dirname, "dist"),
         historyApiFallback: true,
         port: 3000,
+        liveReload: true
     },
     output: {
         publicPath: "auto",
@@ -46,6 +47,9 @@ module.exports = {
             }
         ],
     },
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js', ".jsx"]
+    },
     plugins: [
         new ModuleFederationPlugin({
             name: "adminApp",
@@ -53,7 +57,15 @@ module.exports = {
                 client: "clientApp@http://localhost:3002/remoteEntry.js",
                 userApp: "userApp@http://localhost:3001/remoteEntry.js",
             },
-            shared: { react: { singleton: true }, "react-dom": { singleton: true } },
+            shared: {
+                react: {
+                    singleton: true,
+                    requiredVersion: require("./package.json").dependencies.react
+                }, "react-dom": {
+                    singleton: true,
+                    requiredVersion: require("./package.json").dependencies["react-dom"]
+                }
+            },
         }),
         new HtmlWebpackPlugin({
             template: "./public/index.html",
