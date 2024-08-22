@@ -1,29 +1,26 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 interface BlogState {
-  blogIndex: number
+  blogIndex: number;
 }
 
 const initialState: BlogState = {
   blogIndex: 0,
-}
+};
 
 export const blogSlice = createSlice({
-  name: 'blog',
+  name: "blog",
   initialState,
   reducers: {
     incrementBlogVal: (state) => {
-      state.blogIndex += 1
-    },
-    decrementBlogVal: (state) => {
-      state.blogIndex -= 1
+      state.blogIndex += 1;
     },
     setBlogVal: (state, action) => {
-      state.blogIndex = action.payload
-    }
+      state.blogIndex = action.payload;
+    },
   },
-})
+});
 
-export const { incrementBlogVal, decrementBlogVal, setBlogVal } = blogSlice.actions
-
-export default blogSlice.reducer
+export const { incrementBlogVal, setBlogVal } = blogSlice.actions;
+export default blogSlice.reducer;
+export type TestBlogState = typeof initialState;

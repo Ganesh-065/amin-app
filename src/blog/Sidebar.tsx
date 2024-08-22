@@ -1,9 +1,5 @@
 import * as React from "react";
-import Grid from "@mui/material/Grid";
-import Stack from "@mui/material/Stack";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
-import Link from "@mui/material/Link";
+import { Grid, Link, Paper, Stack, Typography } from "@mui/material";
 
 interface SidebarProps {
   archives: ReadonlyArray<{
@@ -18,7 +14,7 @@ interface SidebarProps {
   title: string;
 }
 
-export default function Sidebar(props: SidebarProps) {
+export default function Sidebar(props: Readonly<SidebarProps>) {
   const { archives, description, social, title } = props;
 
   return (

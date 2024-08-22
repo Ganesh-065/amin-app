@@ -8,28 +8,21 @@ function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit" href="#">
         Your Website
-      </Link>{" "}
+      </Link>
       {new Date().getFullYear()}
       {"."}
     </Typography>
   );
 }
 
-interface FooterProps {
-  description: string;
-  title: string;
-}
-
-export default function Footer(props: FooterProps) {
-  const { description, title } = props;
-
+export default function Footer() {
   return (
     <Box component="footer" sx={{ bgcolor: "background.paper", py: 6 }}>
       <Container maxWidth="lg">
         <Typography variant="h6" align="center" gutterBottom>
-          {title}
+          Footer
         </Typography>
         <Typography
           variant="subtitle1"
@@ -37,7 +30,7 @@ export default function Footer(props: FooterProps) {
           color="text.secondary"
           component="p"
         >
-          {description}
+          Something here to give the footer a purpose!
         </Typography>
         <Copyright />
       </Container>

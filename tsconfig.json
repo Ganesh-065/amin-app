@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "test-utils": ["./utils/test-utils"]
+    },
     "target": "es5",
     "lib": [
       "es6",
@@ -26,6 +30,6 @@
     "strictNullChecks": true,
   },
   "include": [
-    "src"
+    "src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src"
   ]
 }

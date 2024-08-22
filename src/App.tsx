@@ -1,18 +1,16 @@
-import React, { Suspense } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import Blog from "blog/Blog";
+import Register from "components/Register.tsx";
+import Login from "components/Login";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { decrement, increment } from "./redux/counterSlice.ts";
-import { RootState } from "./redux/store.ts";
-import Blog from "./blog/Blog.tsx";
+import ProtectedRoute from "components/ProtectedRoute";
 
 // const UserApp = React.lazy(() => import("userApp/App"));
 // const ClientApp = React.lazy(() => import("client/App"));
 
 const App = () => {
-  const dispatch = useDispatch();
-  const { value } = useSelector((store: RootState) => store.counter);
-
   // lofin45614@alientex.com
+
   return (
     <div>
       <BrowserRouter>
@@ -28,13 +26,13 @@ const App = () => {
                   backgroundColor: "greenyellow",
                 }}
               >
-                <h1>Admin App {value}</h1>
-                <button onClick={() => dispatch(increment())}>Add</button>
-                <button onClick={() => dispatch(decrement())}>Remove</button>
+                <h1>Admin App</h1>
               </div>
             }
           />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
           {/* <Route
             path="/user"
             element={

@@ -1,0 +1,11 @@
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-container {
+  scroll-behavior: smooth;
+}
+
+.link {
+    text-decoration: none !important;
+}
