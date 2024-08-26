@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { incrementBlogVal, setBlogVal } from "../redux/blogSlice";
 import { RootState } from "../redux/store";
@@ -59,7 +59,7 @@ const Corousel = () => {
   }, [blogIndex, dispatch, posts.length]);
 
   return (
-    <div>
+    <div style={{ position: "relative" }}>
       <img
         src={posts[blogIndex].image}
         alt={posts[blogIndex].imageText}
@@ -69,10 +69,10 @@ const Corousel = () => {
         style={{
           display: "flex",
           flexDirection: "row",
-          gap: "10px",
-          position: "relative",
-          top: "-40px",
-          right: "-90%",
+          gap: "15px",
+          position: "absolute",
+          bottom: "20px",
+          right: "10px",
         }}
       >
         {posts.map((post) => (

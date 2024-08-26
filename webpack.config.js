@@ -48,8 +48,14 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', ".jsx"]
+        // Tell Webpack to resolve modules using "src" as a base directory
+        modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+        alias: {
+            '@': path.resolve(__dirname, 'src'), // Optional: You can use @ as a shorthand
+        },
+        extensions: ['.js', '.jsx', '.ts', '.tsx'], // Add extensions you are using
     },
+
     plugins: [
         new ModuleFederationPlugin({
             name: "adminApp",

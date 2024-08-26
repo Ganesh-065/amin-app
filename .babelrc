@@ -4,5 +4,14 @@
     ["@babel/preset-react", { "runtime": "automatic" }],
     "@babel/preset-typescript"
   ],
-  "plugins": ["macros", "@babel/plugin-proposal-class-properties"]
+  "plugins": [
+    "macros",
+    "@babel/plugin-proposal-class-properties",
+    [
+      "@babel/plugin-transform-react-jsx",
+      {
+        "runtime": "automatic"
+      }
+    ]
+  ]
 }

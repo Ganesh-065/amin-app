@@ -1,12 +1,18 @@
-import { screen } from "@testing-library/react";
-import { render } from "tests/testUtils";
+import { render, screen } from "@testing-library/react";
+import NotFound from "components/NotFound";
+import { renderWithProviders } from "tests/testUtils";
 import App from "./App";
 
 describe("checking app file", () => {
-  it("works", () => {
-    render(<App />);
+  it("renders NotFound component for undefined route", async () => {
+    renderWithProviders(<App />);
 
-    const title = screen.getByText(/app/i);
-    expect(title).toBeInTheDocument();
+    expect(screen.getByText(/admin app/i)).toBeInTheDocument();
+  });
+
+  it("renders NotFound component for  n undefined route", async () => {
+    render(<NotFound />);
+
+    expect(screen.getByText("Not Found")).toBeInTheDocument();
   });
 });
